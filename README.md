@@ -1,68 +1,29 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## BetTracker
 
-## Available Scripts
+American sports odds application frontend, built with React, Redux, JavaScript, and CSS.
 
-In the project directory, you can run:
+## Project Status
 
-### `yarn start`
+Having some issues with redirects upon login. The design needs a bit of refinement.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Installation and Setup Instructions
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Clone down this repository. You will need `node` and `npm` installed globally on your machine.  
 
-### `yarn test`
+Installation:
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`npm install`  
 
-### `yarn build`
+To Start Server:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`npm start`
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Reflection
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+I began this project while I was a student at Flatiron School. I had little experience with Redux and Hooks before this project and I wanted to be sure to implement them.
 
-### `yarn eject`
+My original idea was to create an application geared towards bookkeepers. I realized the legal ramifications of this idea and how connecting payment options would become very complex, very fast. So I decided to instead build an application geared towards bettors.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+One of the main challenges I ran into was using JWT tokens and Hooks for the first time. I had a bit of experience with both but nothing on this scale. At the time of this writing I can confidently say I have a thorough understanding of both.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+The technologies implemented in this project are React, React-Router, Redux, Thunk, and a significant amount of JSX and CSS. In the future I plan to refine the design and fix some small bugs that I have noticed, and implement error handling. I am sure than in time I can use this project as a starting point for my initial idea of making a bookkeeping application.
