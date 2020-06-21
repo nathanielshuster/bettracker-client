@@ -1,16 +1,18 @@
-import React from 'react';
-import { Switch, Redirect } from 'react-router'
-import { withRouter, Route } from 'react-router-dom'
+import React from 'react'
+import { Switch } from 'react-router-dom'
+import { withRouter, Redirect } from "react-router"
 
 import { Layout } from './components/Layout'
 import { NavigationBar } from './components/NavigationBar'
 
 import { AlertNotifcation } from './components/AlertNotification'
 
+import { GuestRoute } from './components/GuestRoute'
 import { Home } from './routes/Home'
 import { Signup } from './routes/Signup'
 import { Login } from './routes/Login'
 
+import { PrivateRoute } from './components/PrivateRoute'
 import { Odds } from './routes/Odds'
 import { Events } from './routes/Events'
 import { Profile } from './routes/Profile'
@@ -22,12 +24,13 @@ function App() {
       <AlertNotifcation />
       <Layout>
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/signup" component={Signup} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/odds" component={Odds} />
-          <Route exact path="/events" component={Events} />
-          <Route exact path="/profile" component={Profile} />
+          <GuestRoute exact path="/" component={Home} />
+          <GuestRoute exact path="/signup" component={Signup} />
+          <GuestRoute exact path="/login" component={Login} />
+          <PrivateRoute exact path="/odds" component={Odds} />
+          <PrivateRoute exact path="/events" component={Events} />
+          <PrivateRoute exact path="/profile" component={Profile} />
+          <Redirect from="*" to="/" />
         </Switch>
       </Layout>
     </React.Fragment>

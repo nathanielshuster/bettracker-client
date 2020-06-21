@@ -58,7 +58,6 @@ export const loginUser = (user) => {
     })
       .then(response => {
         const data = response.data
-        console.log(response)
         localStorage.setItem('token', data.token);
         dispatch(loginSuccess())
         dispatch(getEventsSuccess(data.events))
