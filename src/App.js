@@ -1,6 +1,6 @@
 import React from 'react'
-import { Switch } from 'react-router-dom'
-import { withRouter, Redirect } from "react-router"
+import { Switch, Redirect } from 'react-router-dom'
+import { withRouter } from 'react-router'
 
 import { Layout } from './components/Layout'
 import { NavigationBar } from './components/NavigationBar'
@@ -25,11 +25,11 @@ function App() {
       <Layout>
         <Switch>
           <GuestRoute exact path="/" component={Home} />
-          <GuestRoute exact path="/signup" component={Signup} />
-          <GuestRoute exact path="/login" component={Login} />
-          <PrivateRoute exact path="/odds" component={Odds} />
-          <PrivateRoute exact path="/events" component={Events} />
-          <PrivateRoute exact path="/profile" component={Profile} />
+          <GuestRoute path="/signup" component={Signup} />
+          <GuestRoute path="/login" component={Login} />
+          <PrivateRoute path="/odds" component={Odds} />
+          <PrivateRoute path="/events" component={Events} />
+          <PrivateRoute path="/profile" component={Profile} />
           <Redirect from="*" to="/" />
         </Switch>
       </Layout>
