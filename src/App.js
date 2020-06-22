@@ -1,6 +1,5 @@
 import React from 'react'
-import { Switch, Redirect } from 'react-router-dom'
-import { withRouter } from 'react-router'
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom'
 
 import { Layout } from './components/Layout'
 import { NavigationBar } from './components/NavigationBar'
@@ -17,24 +16,23 @@ import { Odds } from './routes/Odds'
 import { Events } from './routes/Events'
 import { Profile } from './routes/Profile'
 
-function App() {
+const App = () => {
   return (
     <React.Fragment>
       <NavigationBar />
       <AlertNotifcation />
       <Layout>
         <Switch>
-          <GuestRoute exact path="/" component={Home} />
-          <GuestRoute path="/signup" component={Signup} />
-          <GuestRoute path="/login" component={Login} />
-          <PrivateRoute path="/odds" component={Odds} />
-          <PrivateRoute path="/events" component={Events} />
-          <PrivateRoute path="/profile" component={Profile} />
-          <Redirect from="*" to="/" />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/signup" component={Signup} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/odds" component={Odds} />
+          <Route exact path="/events" component={Events} />
+          <Route exact path="/profile" component={Profile} />
         </Switch>
       </Layout>
     </React.Fragment>
-  );
+  )
 }
 
 export default withRouter(App);
