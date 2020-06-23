@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, Route, Redirect, withRouter } from 'react-router-dom'
+import { Switch, Route, withRouter } from 'react-router-dom'
 
 import { Layout } from './components/Layout'
 import { NavigationBar } from './components/NavigationBar'
