@@ -5,13 +5,15 @@ import {
   EVENTS_REQUEST,
   EVENTS_SUCCESS,
   EVENTS_FAILURE,
+  FILTER_EVENTS,
   DELETE_REQUEST,
   DELETE_SUCCESS,
   DELETE_FAILURE
 } from '../actions/eventActionTypes'
 
 const initialState = {
-  events: []
+  events: [],
+  filteredEvents: []
 }
 
 export const eventReducer = (state = initialState, action) => {
@@ -40,6 +42,11 @@ export const eventReducer = (state = initialState, action) => {
     case EVENTS_FAILURE:
       return {
         ...state
+      }
+    case FILTER_EVENTS:
+      return {
+        ...state,
+        filteredEvents: action.filteredEvents
       }
     case DELETE_REQUEST:
       return {

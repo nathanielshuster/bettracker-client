@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getEvents } from '../actions/eventActions'
-import { Container, Row, Col, Form, Spinner } from 'react-bootstrap';
+import { getEvents, filterEvents } from '../actions/eventActions'
+import { Container, Row, Col, Form } from 'react-bootstrap';
 import { EventsContainer } from '../components/EventsContainer'
 import { PageBanner } from '../components/PageBanner'
 import styled from 'styled-components';
@@ -15,17 +15,14 @@ const Styles = styled.div`
 `;
 
 export const Events = () => {
-  const loading = useSelector(state => state.loadingReducer.isLoading)
   const newUser = useSelector(state => state.registerReducer.newUser)
   const newSession = useSelector(state => state.loginReducer.newSession)
   const results = useSelector(state => state.eventReducer.events)
-  const [sportEvents, setSportEvents] = useState([])
+  const filteredEvents = useSelector(state => state.eventReducer.filteredEvents)
 
   const dispatch = useDispatch()
   useEffect(() => {
-    if (newUser || newSession) {
-      return
-    } else {
+    if (!newUser && !newSession) {
       dispatch(getEvents())
     }
   }, [dispatch, newUser, newSession]);
@@ -33,7 +30,7 @@ export const Events = () => {
   const handleChange = (e) => {
     let index = e.target.selectedIndex;
     let sport = e.target.childNodes[index].id
-    setSportEvents(results.filter(event => event.sport === sport))
+    dispatch(filterEvents(sport, results))
   }
 
   return (
@@ -66,11 +63,7 @@ export const Events = () => {
         </Row>
         <Row className='justify-content-center text-center'>
           <Col>
-          { !loading ? <EventsContainer events={sportEvents} /> :
-            <Spinner animation="border" role="status" className='m-3'>
-              <span className="sr-only">Loading...</span>
-            </Spinner>
-          }
+            <EventsContainer events={filteredEvents} />
           </Col>
         </Row>
       </Container>

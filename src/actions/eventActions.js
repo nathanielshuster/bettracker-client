@@ -7,6 +7,7 @@ import {
   EVENTS_REQUEST,
   EVENTS_SUCCESS,
   EVENTS_FAILURE,
+  FILTER_EVENTS,
   DELETE_REQUEST,
   DELETE_SUCCESS,
   DELETE_FAILURE
@@ -14,7 +15,6 @@ import {
 
 import { isLoading, isNotLoading } from './loadingActions'
 import { addAlert } from './alertActions'
-
 
 const header = {
   Authorization: 'Bearer ' + localStorage.token
@@ -54,6 +54,13 @@ export const getEvents = (event) => {
         dispatch(addAlert('danger', 'Could not get events.'))
         dispatch(isNotLoading())
       })
+  }
+}
+
+export const filterEvents = (sport, events) => {
+  return (dispatch) => {
+    const filteredEvents = events.filter(event => event.sport === sport)
+    dispatch(getFilteredEvents(filteredEvents))
   }
 }
 
@@ -109,6 +116,13 @@ export const getEventsSuccess = events => {
 export const getEventsFailure = () => {
   return {
     type: EVENTS_FAILURE
+  }
+}
+
+export const getFilteredEvents = filteredEvents => {
+  return {
+    type: FILTER_EVENTS,
+    filteredEvents
   }
 }
 
