@@ -117,11 +117,8 @@ export const updateUser = (user) => {
 }
 
 export const logoutUser = () => {
-  return (dispatch) => {
-    localStorage.removeItem('token')
-    history.push('/')
-    dispatch(logout())
-  }
+  localStorage.removeItem('token')
+  history.push('/')
 }
 
 export const registerRequest = () => {
