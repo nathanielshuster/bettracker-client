@@ -30,20 +30,6 @@ export const Home = () => {
               sub="Search odds. Save events. Get ahead." />
           </Col>
         </Row>
-        <Row>
-          <Col className="text-center">
-            <h4>$1.</h4>
-            <p>Find sporting events.</p>
-          </Col>
-          <Col className="text-center">
-            <h4>$2.</h4>
-            <p>Save sporting events.</p>
-          </Col>
-          <Col className="text-center">
-            <h4>$3.</h4>
-            <p>Monitor your events.</p>
-          </Col>
-        </Row>
       </Container>
     </Styles>
   )

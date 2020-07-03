@@ -1,5 +1,5 @@
 import React from 'react';
-import { Accordion } from 'react-bootstrap';
+import { Accordion, Col } from 'react-bootstrap';
 import { EventCard } from '../components/EventCard'
 import styled from 'styled-components';
 
@@ -19,7 +19,7 @@ export const EventsContainer = (props) => {
     <Styles>
       { !hasResults ? <h4 className='no-results'>No Results</h4> :
         <Accordion>
-        { props.events.map((event, i) => <EventCard key={i} id={i} data={event} />) }
+        { props.events.map((event, i) => <Col><EventCard key={i} id={i} data={event} /></Col>) }
         </Accordion>
       }
     </Styles>

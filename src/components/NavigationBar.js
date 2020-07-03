@@ -5,6 +5,10 @@ import { GuestNavLinks } from './GuestNavLinks'
 import styled from 'styled-components';
 
 const Styles = styled.div`
+  .navbar {
+    background-color: #17252A;
+  }
+
   .navbar-brand {
     font-family: rift,sans-serif;
     font-weight: 700;

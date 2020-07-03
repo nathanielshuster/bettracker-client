@@ -62,9 +62,7 @@ export const Events = () => {
           </Col>
         </Row>
         <Row className='justify-content-center text-center'>
-          <Col>
-            <EventsContainer events={filteredEvents} />
-          </Col>
+          <EventsContainer events={filteredEvents} />
         </Row>
       </Container>
     </Styles>

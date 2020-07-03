@@ -12,7 +12,7 @@ const Styles = styled.div`
     font-family: rift,sans-serif;
     font-weight: 700;
     font-style: normal;
-    color: #FEFFFF;
+    color: #17252A;
   }
 
   .sub {
@@ -26,10 +26,8 @@ const Styles = styled.div`
 export const PageBanner = (props) => (
   <Styles>
     <Jumbotron fluid>
-      <Container>
-        <h2 className='heading text-center'>{props.heading}</h2>
-        { props.sub ? <p className='sub text-center'>{props.sub}</p> : null }
-      </Container>
+      <h1 className='heading text-left m-0'>{props.heading}</h1>
+      { props.sub ? <h5 className='sub text-left'>{props.sub}</h5> : null }
     </Jumbotron>
   </Styles>
 );

@@ -1,10 +1,10 @@
 import React from 'react'
 import { Switch, Route, withRouter } from 'react-router-dom'
 
-import { Layout } from './components/Layout'
 import { NavigationBar } from './components/NavigationBar'
-
 import { AlertNotifcation } from './components/AlertNotification'
+import { Jumbo } from './components/Jumbo'
+import { Layout } from './components/Layout'
 
 import { GuestRoute } from './components/GuestRoute'
 import { Home } from './routes/Home'
@@ -20,6 +20,7 @@ const App = () => {
   return (
     <React.Fragment>
       <NavigationBar />
+      <Jumbo />
       <AlertNotifcation />
       <Layout>
         <Switch>

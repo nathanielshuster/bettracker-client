@@ -19,7 +19,7 @@ const Styles = styled.div`
     font-family: acumin-pro, sans-serif;
     font-weight: 400;
     font-style: normal;
-    background-color: #2B7A78;
+    background-color: #17252A;
     color: #FEFFFF;
     border: none;
   }
